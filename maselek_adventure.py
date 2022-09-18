@@ -5,7 +5,7 @@ description = "You wake up to coldness of your house. \nYou decide to put on som
 
 
 def main():
-
+    stops = 0
     print("")
     print("")
     print(title)
@@ -14,15 +14,25 @@ def main():
     input(input_1)
 
     home()
+    stops = stops +1
     village()
+    stops = stops +1
     pub()
+    stops = stops +1
     frozen_lake()
+    stops = stops +1
     meadow()
+    stops = stops +1
     river()
+    stops = stops +1
     campsite()
+    stops = stops +1
     swamp()
+    stops = stops +1
     cliffs()
+    stops = stops +1
     rock()
+    stops = stops +1
     end()
     
     print(f"You went through {stops} areas!")
