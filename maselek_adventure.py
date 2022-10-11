@@ -1,9 +1,11 @@
 title = "ON A WALK THROUGH A SNOWY FOREST \nby Jozef Maselek"
-intro = "you wake up in your home to find that it had snowed heavily overnight! \nYou decide that you want to walk through the woods and take a nice walk."
+
+
 input_1 = (" \nPress the <Enter> key to continue.")
 description_1 = ""
 input_2 = (" \nWould you like to know more about whats happening?")
 description_2 = ""
+
 
 def main():
     stops = 0
@@ -11,8 +13,18 @@ def main():
     print("")
     print(title)
     print("")
+    userName = input("What is your name?")
+    intro = f"You, {userName}, wake up in your home to find that it had snowed heavily overnight! \nYou decide that you want to walk through the woods and take a nice walk."
+    print("")
     print(intro)
     input(input_1)
+
+    ## also change to jupiter notebook
+    ##
+    ## example
+    ## cmd = input("where do you want to go: ")
+    ## if cmd.upper() = "NORTH"
+    ##   rest of code
 
     home()
     stops = stops +1
@@ -40,7 +52,7 @@ def main():
 
 def home():
     print("")
-    description_1 = "You wake up to coldness of your house. \nYou decide to put on some warm clothes and boots before going outside to get something to eat and drink at the pub."
+    description_1 = f"You wake up to coldness of your house. \nYou decide to put on some warm clothes and boots before going outside to get something to eat and drink at the pub."
     print(description_1)
     input(input_1)
 

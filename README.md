@@ -2,17 +2,17 @@
 ## On a Visit through the Forest in the Winter
 ### Jozef Maselek
 
-You wake up covered in snow. After brushing off some snow from your body, you look around yourself to find that you are stuck in a forest. You do not remember how you ended up in the forest, but you do know that you have to somehow get back to the village where you live. You are well equiped with appropriate clothing and tools for your journey. 
+You awake in your home. It had snowed heavily outside the day prior and you want to take a walk through the woods around the village you live in, maybe to take a picture or two.
 
 ####  TRAVEL ITINERARY
-1. Next to a large rock embeded on the top of a cliffside
-2. The cliffs
-3. The frozen over swamp
-4. A recently abandoned campsite
-5. The river
-6. An open field/meadow
-7. The frozen Lake
-8. The village
-9. The Pub
-10. Your home
+1. Your Home
+2. The Village
+3. The Pub
+4. The Frozen Lake
+5. The open field/meadow
+6. The river
+7. The old campsite
+8. The frozen over swamp
+9. The Cliffs
+10. The large rock at the peak of the cliffs
 
