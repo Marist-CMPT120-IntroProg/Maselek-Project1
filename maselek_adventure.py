@@ -9,17 +9,17 @@ ask = "Which direction do you want to go?"
 
 ## There is defintely a way to make the "while" loops dependent on a function with paramaters to serve the location selections (RIGHT?????)
 
-
+print("")
+print("")
+print(title)
+print("")
+userName = input("What is your name?")
 
 
 
 def main():
     
-    print("")
-    print("")
-    print(title)
-    print("")
-    userName = input("What is your name?")
+    
     intro = f"You, {userName}, wake up in your home to find that it had snowed heavily overnight! \nYou decide that you want to take a nice walk through the woods."
     print("")
     print(intro)
@@ -357,12 +357,13 @@ def rock():
 
 def end():
     print("")
-    print("Thank you for your time. \nGoodbye!")
+    print(f"Thank you for your time, {userName}. \nGoodbye!")
     print(f"You went through {stops} areas!")
 
     ##copyright
     print("")
-    
+    print("Game idea, name, and title all copyrighted by Jozef Maselek, \nany and all online interaction is not rated by ESRB nor monitored by Jozef Maselek")
+
 
 
 
