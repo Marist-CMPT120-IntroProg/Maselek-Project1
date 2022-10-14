@@ -7,7 +7,6 @@ directions = ["north","south","east","west","quit","help"]
 stops = 0
 ask = "Which direction do you want to go?"
 
-
 ## There is defintely a way to make the "while" loops dependent on a function with paramaters to serve the location selections (RIGHT?????)
 
 
@@ -44,6 +43,7 @@ def help():
     input(input_1)
 
 def home():
+    location = ""
     print("")
     ##stops = stops +1
     description_1 = "You wake up to coldness of your house. \nYou decide to put on some warm clothes and boots before going outside to get something to eat and drink at the pub."
@@ -54,8 +54,10 @@ def home():
         print(ask)
         userInput = input()
         if userInput.lower == "south":
+            location = "village"
             village()
         elif userInput.lower == "north":
+            location = "village"
             village()
         elif userInput.lower == "help":
             help()
@@ -83,10 +85,13 @@ def village():
         print(ask)
         userInput = input()
         if userInput.lower == "east":
+            location = "pub"
             pub()
         elif userInput.lower == "north":
+            location = "pub"
             pub()
         elif userInput.lower == "south":
+            location = "lake"
             frozen_lake()
         elif userInput.lower == "help":
             help()
@@ -114,6 +119,7 @@ def pub():
         print(ask)
         userInput = input()
         if userInput.lower == "south":
+            location = "village"
             village()
         elif userInput.lower == "help":
             help()
@@ -141,8 +147,10 @@ def frozen_lake():
         print(ask)
         userInput = input()
         if userInput.lower == "south":
+            location = "meadow"
             meadow()
         elif userInput.lower == "north":
+            location = "village"
             village()
         elif userInput.lower == "help":
             help()
@@ -171,8 +179,10 @@ def meadow():
         print(ask)
         userInput = input()
         if userInput.lower == "south":
+            location = "river"
             river()
         elif userInput.lower == "north":
+            location = "lake"
             frozen_lake()
         elif userInput.lower == "help":
             help()
@@ -204,11 +214,14 @@ def river():
         print(description_3)
         print(ask)
         userInput = input()
-        if userInput.lower == "western":
+        if userInput.lower == "west":
+            location = "campsite"
             campsite()
         elif userInput.lower == "south":
+            location = "river"
             river()
         elif userInput.lower == "north":
+            location = "meadow"
             meadow()
         elif userInput.lower == "help":
             help()
@@ -241,8 +254,10 @@ def campsite():
         print(ask)
         userInput = input()
         if userInput.lower == "north":
+            location = "swamp"
             swamp()
         elif userInput.lower == "east":
+            location = "river"
             river()
         elif userInput.lower == "help":
             help()
@@ -275,8 +290,10 @@ def swamp():
         print(ask)
         userInput = input()
         if userInput.lower == "south":
+            location = "campsite"
             campsite()
         elif userInput.lower == "north":
+            location = "cliffs"
             cliffs()
         elif userInput.lower == "help":
             help()
@@ -308,8 +325,10 @@ def cliffs():
         print(ask)
         userInput = input()
         if userInput.lower == "south":
+            location = "swamp"
             swamp()
         elif userInput.lower == "north":
+            location = "rock"
             rock()
         elif userInput.lower == "help":
             help()
@@ -340,6 +359,10 @@ def end():
     print("")
     print("Thank you for your time. \nGoodbye!")
     print(f"You went through {stops} areas!")
+
+    ##copyright
+    print("")
+    
 
 
 
