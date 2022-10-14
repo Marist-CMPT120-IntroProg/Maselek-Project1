@@ -1,11 +1,9 @@
-title = "ON A WALK THROUGH A SNOWY FOREST \nby Jozef Maselek"
-input_1 = (" \nPress the <Enter> key to continue.")
-description_1 = ""
-input_2 = (" \nWould you like to know more about whats happening?")
-description_2 = ""
-actions = ["north","south","east","west","quit","help", "examine"]
-stops = 0
-ask = "What do you want to go, where do you want to go?"
+title: str = "ON A WALK THROUGH A SNOWY FOREST \nby Jozef Maselek"
+input_1: str = (" \nPress the <Enter> key to continue.")
+input_2: str = (" \nWould you like to know more about whats happening?")
+actions: str = ["north","south","east","west","quit","help", "examine"]
+stops: int = 0
+askL: str = "What do you want to go, where do you want to go?"
 
 ## There is defintely a way to make the "while" loops dependent on a function with paramaters to serve the location selections (RIGHT?????)
 
@@ -13,7 +11,7 @@ print("")
 print("")
 print(title)
 print("")
-userName = input("What is your name?")
+userName: str = input("What is your name?")
 
 
 
@@ -385,7 +383,7 @@ def cliffs():
         print(description_1)
   
         print(ask)
-        
+
         userInput = input()
         if userInput.lower == "south":
             location = "swamp"
