@@ -3,9 +3,9 @@ input_1 = (" \nPress the <Enter> key to continue.")
 description_1 = ""
 input_2 = (" \nWould you like to know more about whats happening?")
 description_2 = ""
-directions = ["north","south","east","west","quit","help"]
+actions = ["north","south","east","west","quit","help", "examine"]
 stops = 0
-ask = "Which direction do you want to go?"
+ask = "What do you want to go, where do you want to go?"
 
 ## There is defintely a way to make the "while" loops dependent on a function with paramaters to serve the location selections (RIGHT?????)
 
@@ -38,7 +38,7 @@ def main():
 
 def help():
     print("")
-    print("Your options are: north, south, east, west, quit, help")
+    print("Your options are: north, south, east, west, quit, help, examine")
     print("Good luck!")
     input(input_1)
 
@@ -47,11 +47,15 @@ def home():
     print("")
     ##stops = stops +1
     description_1 = "You wake up to coldness of your house. \nYou decide to put on some warm clothes and boots before going outside to get something to eat and drink at the pub."
+    description_2 = "Your home smells like a cross between a Stop & Shop and Minnesota."
+
 
     userInput = ""
-    while userInput not in directions:
+    while userInput not in actions:
         print(description_1)
+
         print(ask)
+
         userInput = input()
         if userInput.lower == "south":
             location = "village"
@@ -59,6 +63,12 @@ def home():
         elif userInput.lower == "north":
             location = "village"
             village()
+        elif userInput.lower == "examine":
+            print("")
+            print(description_2)
+            print("")
+            print("")
+            home()
         elif userInput.lower == "help":
             help()
             home()
@@ -78,11 +88,15 @@ def village():
     description_2 = "The pub is up the road a fair bit from your home so you get to walking. \nYou can also go south to the lake."
     ##print(description_2)
 
+    description_3 = "For some odd reason, the snow on the sidewalk seems to be cleared out from people walking through it."
+
     userInput = ""
-    while userInput not in directions:
+    while userInput not in actions:
         print(description_1)
         print(description_2)
+
         print(ask)
+
         userInput = input()
         if userInput.lower == "east":
             location = "pub"
@@ -93,6 +107,12 @@ def village():
         elif userInput.lower == "south":
             location = "lake"
             frozen_lake()
+        elif userInput.lower == "examine":
+            print("")
+            print(description_3)
+            print("")
+            print("")
+            village()
         elif userInput.lower == "help":
             help()
             village()
@@ -113,14 +133,21 @@ def pub():
     ##print(description_2)
 
     userInput = ""
-    while userInput not in directions:
+    while userInput not in actions:
         print(description_1)
-        print(description_2)
+
         print(ask)
+
         userInput = input()
         if userInput.lower == "south":
             location = "village"
             village()
+        elif userInput.lower == "examine":
+            print("")
+            print(description_2)
+            print("")
+            print("")
+            home()
         elif userInput.lower == "help":
             help()
             pub()
@@ -141,10 +168,11 @@ def frozen_lake():
     ##print(description_2)
 
     userInput = ""
-    while userInput not in directions:
+    while userInput not in actions:
         print(description_1)
-        print(description_2)
+
         print(ask)
+
         userInput = input()
         if userInput.lower == "south":
             location = "meadow"
@@ -152,6 +180,12 @@ def frozen_lake():
         elif userInput.lower == "north":
             location = "village"
             village()
+        elif userInput.lower == "examine":
+            print("")
+            print(description_2)
+            print("")
+            print("")
+            home()
         elif userInput.lower == "help":
             help()
             home()
@@ -173,10 +207,11 @@ def meadow():
     ##print(description_2)
 
     userInput = ""
-    while userInput not in directions:
+    while userInput not in actions:
         print(description_1)
-        print(description_2)
+
         print(ask)
+
         userInput = input()
         if userInput.lower == "south":
             location = "river"
@@ -184,6 +219,12 @@ def meadow():
         elif userInput.lower == "north":
             location = "lake"
             frozen_lake()
+        elif userInput.lower == "examine":
+            print("")
+            print(description_2)
+            print("")
+            print("")
+            home()
         elif userInput.lower == "help":
             help()
             meadow()
@@ -208,11 +249,11 @@ def river():
     ##print(description_1)
 
     userInput = ""
-    while userInput not in directions:
+    while userInput not in actions:
         print(description_1)
-        print(description_2)
-        print(description_3)
+
         print(ask)
+
         userInput = input()
         if userInput.lower == "west":
             location = "campsite"
@@ -223,6 +264,13 @@ def river():
         elif userInput.lower == "north":
             location = "meadow"
             meadow()
+        elif userInput.lower == "examine":
+            print("")
+            print(description_2)
+            print(description_3)
+            print("")
+            print("")
+            home()
         elif userInput.lower == "help":
             help()
             river()
@@ -247,11 +295,11 @@ def campsite():
     ##print(description_1)
 
     userInput = ""
-    while userInput not in directions:
+    while userInput not in actions:
         print(description_1)
-        print(description_2)
-        print(description_3)
+
         print(ask)
+
         userInput = input()
         if userInput.lower == "north":
             location = "swamp"
@@ -259,6 +307,13 @@ def campsite():
         elif userInput.lower == "east":
             location = "river"
             river()
+        elif userInput.lower == "examine":
+            print("")
+            print(description_2)
+            print(description_3)
+            print("")
+            print("")
+            home()
         elif userInput.lower == "help":
             help()
             campsite()
@@ -283,11 +338,11 @@ def swamp():
     ##print(description_1)
     
     userInput = ""
-    while userInput not in directions:
+    while userInput not in actions:
         print(description_1)
-        print(description_2)
-        print(description_3)
+
         print(ask)
+
         userInput = input()
         if userInput.lower == "south":
             location = "campsite"
@@ -295,6 +350,13 @@ def swamp():
         elif userInput.lower == "north":
             location = "cliffs"
             cliffs()
+        elif userInput.lower == "examine":
+            print("")
+            print(description_2)
+            print(description_3)
+            print("")
+            print("")
+            home()
         elif userInput.lower == "help":
             help()
             swamp()
@@ -319,10 +381,11 @@ def cliffs():
     ##print(description_1)
     
     userInput = ""
-    while userInput not in directions:
+    while userInput not in actions:
         print(description_1)
-        print(description_2)
+  
         print(ask)
+        
         userInput = input()
         if userInput.lower == "south":
             location = "swamp"
@@ -330,6 +393,12 @@ def cliffs():
         elif userInput.lower == "north":
             location = "rock"
             rock()
+        elif userInput.lower == "examine":
+            print("")
+            print(description_2)
+            print("")
+            print("")
+            home()
         elif userInput.lower == "help":
             help()
             cliffs()
