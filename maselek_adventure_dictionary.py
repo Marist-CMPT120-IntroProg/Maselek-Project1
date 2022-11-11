@@ -153,9 +153,11 @@ def main_game():
             
 
             elif userInput in current_area:
+
                 if current_area["was_visited"] == False:
                     current_area["was_visited"] = True
                     stops = stops + 1
+                    
                 current_area = areas[current_area[userInput]]
             else:
                 print("")
