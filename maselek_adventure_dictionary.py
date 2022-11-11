@@ -1,4 +1,6 @@
 
+
+
 # ---------------- text_variables lol ------------
 home1: str = "You wake up to the coldness of your house. \nYou decide to put on some warm clothes and boots before going outside to get something to eat and drink at the pub."
 home2: str = "Your home smells like a cross between a Stop & Shop and Minnesota."
@@ -20,7 +22,6 @@ cliffs1: str = "You find yourself at the base of the cliffs. You look above you 
 cliffs2: str = "A small pathway can be seen clearly carved along the cliffside going north towards the top"
 rock1: str = "You make your way to the top of the cliffside and find yourself graced by the presence of a large rock. \nThis is the end of the game, type 'end' to finish the game"
 rock2: str = "You take a look around you and decide to take a picture of your surroundings. \nhttps://cdn.discordapp.com/attachments/311944103804010496/1020799631766069331/unknown.png"
-
 
 # ----------- data dictionary area !!! --------------
 areas = {
@@ -57,7 +58,6 @@ areas = {
     }
 current_area = areas["home"]
 
-
 list = [
     [["village", "village", None, None], ["north","south","east","west"]],
     [["pub", "frozen_lake", "pub", None], ["north","south","east","west"]],
@@ -71,7 +71,6 @@ list = [
     [[None, None, None, None], ["north","south","east","west"]]
 ]
 
-
 # ------------------- ACTIONS/other variables ----------------
 actions: str = ["north", "south", "east", "west", "quit", "help", "details", "end"]
 ask: str = "\nWhat direction do you want to go in?"
@@ -80,9 +79,7 @@ title: str = "ON A WALK THROUGH A SNOWY FOREST \nby Jozef Maselek"
 userName: str = ""
 stops: int = 1
 
-
-
-# --------------------- GAME INTRO -----------------
+# --------------------- Functionsal -----------------
 def intro():
     global userName
     print("")
@@ -95,10 +92,6 @@ def intro():
     print(intro)
     input(input_1)
 
-
-
-
-# --------------------- END AND HELP FUNCTIONS --------------------
 def end():
     global userName
     print("")
@@ -109,15 +102,26 @@ def end():
     print("")
     print("Game idea, name, and title all copyrighted by Jozef Maselek, \nany and all online interaction is not rated by ESRB nor monitored by Jozef Maselek")
 
-
-
 def help():
     print("")
     print("Your options are: north, south, east, west, quit, help, details")
     print("Good luck!")
 
-
-
+#im not sure how I implement this into the code as to remove the if/elif statements
+def move(location, direction):
+    loc = 0
+    for i in range(10):
+        if areas[i]["name"] == location:
+            loc = i
+    direction = direction.lower()
+    if direction == "north":
+        return list[loc][0][0]
+    if direction == "south":
+        return list[loc][0][1]
+    if direction == "east":
+        return list[loc][0][2]
+    if direction == "west":
+        return list[loc][0][3]
 
 # ----------------------- GAME LOOP ------------------------
 def main_game():
@@ -149,7 +153,6 @@ def main_game():
             
 
             elif userInput in current_area:
-                #so this is kinda working? it adds to stops EVERY time you go to an area, rather than just the first, but I don't know how to fix it.
                 if current_area["was_visited"] == False:
                     current_area["was_visited"] = True
                     stops = stops + 1
@@ -164,7 +167,6 @@ def main_game():
             print("")
             print("Please enter a valid option")
             input(input_1)
-
 
 def main():
     intro()
