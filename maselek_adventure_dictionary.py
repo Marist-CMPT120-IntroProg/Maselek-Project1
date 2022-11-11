@@ -76,22 +76,23 @@ actions: str = ["north", "south", "east", "west", "quit", "help", "details", "en
 ask: str = "\nWhat direction do you want to go in?"
 input_1: str = (" \nPress the <Enter> key to continue.")
 title: str = "ON A WALK THROUGH A SNOWY FOREST \nby Jozef Maselek"
-userName: str = ""
 stops: int = 1
+userName: str = ""
 
-# --------------------- Functionsal -----------------
+# -------------------- intro -------------------
 def intro():
     global userName
     print("")
     print("")
     print(title)
     print("")
-    userName: str = input("What is your name?")
+    userName= input("What is your name?")
     intro = f"You, {userName}, wake up in your home to find that it had snowed heavily overnight! \nYou decide that you want to take a nice walk through the woods."
     print("")
     print(intro)
     input(input_1)
 
+# --------------------- Functionsal -----------------
 def end():
     global userName
     print("")
@@ -125,6 +126,8 @@ def move(location, direction):
 
 # ----------------------- GAME LOOP ------------------------
 def main_game():
+    global current_area
+    global stops
     while True:
         # display current location
         print("")
@@ -157,7 +160,7 @@ def main_game():
                 if current_area["was_visited"] == False:
                     current_area["was_visited"] = True
                     stops = stops + 1
-                    
+
                 current_area = areas[current_area[userInput]]
             else:
                 print("")
@@ -169,6 +172,7 @@ def main_game():
             print("")
             print("Please enter a valid option")
             input(input_1)
+
 
 def main():
     intro()
