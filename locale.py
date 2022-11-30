@@ -13,3 +13,10 @@ class Locale:
             self.was_visited == True
             current_loc = self.summary
         return current_loc
+
+    def was_visited_manual(self):
+        self.was_visited = True
+
+    def show_details(self):
+        print()
+        print(self.details)
