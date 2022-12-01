@@ -28,28 +28,38 @@ class World:
         
         ## all areas
         self.areas = [
-            locale.Location("Home", home1, home2, False)
-            locale.Location("Village", village1, village2, False)
-            locale.Location("Pub", pub1, pub2, False)
-            locale.Location("Frozen Lake", frozen_lake1, frozen_lake2, False)
-            locale.Location("Meadow", meadow1, meadow2, False)
-            locale.Location("River", river1, river2, False)
-            locale.Location("Campsite", campsite1, campsite2, False)
-            locale.Location("Swamp", swamp1, swamp2, False)
-            locale.Location("Cliffs", cliffs1, cliffs2, False)
+            locale.Location("Home", home1, home2, False),
+            locale.Location("Village", village1, village2, False),
+            locale.Location("Pub", pub1, pub2, False),
+            locale.Location("Frozen Lake", frozen_lake1, frozen_lake2, False),
+            locale.Location("Meadow", meadow1, meadow2, False),
+            locale.Location("River", river1, river2, False),
+            locale.Location("Campsite", campsite1, campsite2, False),
+            locale.Location("Swamp", swamp1, swamp2, False),
+            locale.Location("Cliffs", cliffs1, cliffs2, False),
             locale.Location("Rock", rock1, rock2, False)
         ]
 
         ## area movement matrix
         self.movement_list = [
+            # home
             [self.areas[0], self.areas[0], None, None],
+            # village
             [self.areas[2], self.areas[3], self.areas[2], None],
+            # pub
             [None, self.areas[0], None, None],
+            # frozen_lake
             [self.areas[0], self.areas[4], None, None],
+            # meadow
             [self.areas[3], self.areas[5], None, None],
+            # river
             [self.areas[4], self.areas[5], None, self.areas[6]],
+            # campsite
             [self.areas[7], None, self.areas[5], None],
+            # swamp
             [self.areas[8], self.areas[6], None, None],
+            # cliffs
             [self.areas[9], self.areas[7], None, None],
+            # rock
             [None, None, None, None]
         ]
