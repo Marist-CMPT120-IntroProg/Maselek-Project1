@@ -12,7 +12,7 @@ class Player:
 
     def move(self, action):
         
-        next_area = self.world.movement_list[action] 
+        next_area = self.world.movement_list[self.world.areas][action] 
         self.stops += 1
 
         return next_area, self.stops
@@ -29,6 +29,7 @@ class Player:
         return current_loc, self.score
 
     def move_check(self, action):
+
         new_loc, self.stops = self.move(action)
         if new_loc == None:
             print("")
@@ -39,4 +40,9 @@ class Player:
             print("")
             print(new_loc)
             self.current_loc,self.score = self.score_counter(new_loc, self.score)
+    
+    def examine(self,current_loc):
+
+        print(current_loc.details)
+            
    

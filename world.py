@@ -19,7 +19,7 @@ swamp1: str = "You eventually find yourself in an ice-covered swamp. Trees sprou
 swamp2: str = "You stop and notice a deer on the far side of the swamp. \nBefore you can move again, it notices you and runs away.\nYou carefully walk over the ice of the swamp."
 cliffs1: str = "You find yourself at the base of the cliffs. You look above you and see more cliffs jutting out on top of each other."
 cliffs2: str = "A small pathway can be seen clearly carved along the cliffside going north towards the top"
-rock1: str = "You make your way to the top of the cliffside and find yourself graced by the presence of a large rock. \nThis is the end of the game, type 'end' to finish the game"
+rock1: str = "You make your way to the top of the cliffside and find yourself graced by the presence of a large rock. This is the end."
 rock2: str = "You take a look around you and decide to take a picture of your surroundings. \nhttps://cdn.discordapp.com/attachments/311944103804010496/1020799631766069331/unknown.png"
 
 class World:
