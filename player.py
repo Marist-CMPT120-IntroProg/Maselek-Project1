@@ -1,27 +1,27 @@
-import world
-import locale
+from world import *
+from locale_1 import *
 
 class Player:
 
     def __init__(self, name, p_world):
         self.name = name
         self.p_world = p_world
-        self.current_loc = world.areas[0]
+        self.current_loc = p_world.areas[0]
         self.stops = 0
         self.score = 0
 
     def move(self, action):
         
-        next_area = self.world.movement_list[self.world.areas][action] 
+        next_area = self.p_world.movement_list[self.p_world.areas.index(self.current_loc)][action] 
         self.stops += 1
 
         return next_area, self.stops
         
 
-    def score_counter(self, next_area):
+    def score_counter(self, next_area, score):
 
-        if next_area.locale.was_visited == False:
-            next_area.locale.was_visited = True
+        if next_area.was_visited == False:
+            next_area.was_visited = True
             self.score += 10
                             
         current_loc = next_area

@@ -1,4 +1,4 @@
-from locale import *
+from locale_1 import *
 from world import *
 from player import *
 
@@ -43,11 +43,13 @@ def end():
 
     ##copyright
     print("")
+    print("")
     print("Game idea, name, and title all copyrighted by Jozef Maselek, \nany and all online interaction is not rated by ESRB nor monitored by Jozef Maselek")
 
 def help():
     print("")
-    print("Your options are: north, south, east, west, quit, help, details")
+    print("")
+    print("Your options are: north, south, east, west, details, help, and quit")
     print("Good luck!")
     input(input_1)
 
@@ -55,9 +57,12 @@ def help():
 
 def main_game():
     
+    global actions
+    global direction
     global stops
-
-    actions: str = ["north", "south", "east", "west", "quit", "help", "details"]
+    
+    intro()
+    actions = ["north", "south", "east", "west", "details", "help", "quit"]
     stops = player1.stops
 
     while True:
@@ -69,33 +74,32 @@ def main_game():
             if user_movement == actions[0]:
                 direction = 1
                 player1.move_check(direction)
-            
             # south
             elif user_movement == actions[1]: 
                 direction = 2
                 player1.move_check(direction)
-
             # east
             elif user_movement == actions[2]:
                 direction = 3
                 player1.move_check(direction)
-
             # west    
             elif user_movement == actions[3]: 
                 direction = 4
                 player1.move_check(direction)
 
-            # quit            
+
+            # details
             elif user_movement == actions[4]: 
-                break
+                player1.details(player1.current_loc)
             
             # help
             elif user_movement == actions[5]: 
                 help()
-
-            # examine
+            
+            # quit            
             elif user_movement == actions[6]: 
-                player1.examine(player1.current_loc)
+                break
+            
 
         else: 
             print("\nPlease enter a valid command")
@@ -107,7 +111,6 @@ def main_game():
 ## ----------- main -----------
 
 def main():
-    intro()
     main_game()
 
 main()
