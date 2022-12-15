@@ -7,7 +7,7 @@ from player import *
 
 # ------------------- variables ----------------
 
-ask: str = "\nWhat direction do you want to go in? Or what do you want to do?"
+ask: str = "\nWhat direction do you want to go in? Or what do you want to do? "
 input_1: str = (" \nPress the <Enter> key to continue.")
 title: str = "ON A WALK THROUGH A SNOWY FOREST \nby Jozef Maselek"
 userName = None
@@ -30,7 +30,7 @@ def intro():
     print("")
     print(title)
     print("")
-    userName = input("What is your name?")
+    userName = input("What is your name?" )
     print("")
     intro = f"You, {userName}, wake up in your home to find that it had snowed heavily overnight! \nYou decide that you want to take a nice walk through the woods."
     print(intro)
@@ -41,17 +41,36 @@ def intro():
     world1.areas[0].was_visited = True
 
 def end():
-    global userName
+    while True:
+        
+        print("")
+        print(f"Thank you for your time, {userName}. \nGoodbye!")
+        print(f"You went through {stops} areas!")
+        print(f"you gained {score} score!")
+        print("")
 
-    print("")
-    print(f"Thank you for your time, {userName}. \nGoodbye!")
-    print(f"You went through {stops} areas!")
-    print(f"you gained {score} score!")
+        replay = input("Would you like to play again? (yes/no): ")
+        replay == replay.lower 
 
-    ##copyright
-    print("")
-    print("")
-    print("Game idea, name, and title all copyrighted by Jozef Maselek, \nany and all online interaction is not rated by ESRB nor monitored by Jozef Maselek")
+        if replay == "yes":
+            main()
+        
+        elif replay == "no":
+            ##copyright
+            print("")
+            print("")
+            print("Game idea, name, and title all copyrighted by Jozef Maselek, 2022. \nAny and all online interaction is not rated by ESRB nor monitored by Jozef Maselek")
+            break
+
+        else:
+            print("")
+            print("")
+            print("")
+            print("please pick between yes or no.")
+            continue
+
+
+       
 
 def help():
     print("")
@@ -104,7 +123,21 @@ def main_game():
             
             # talk
             elif user_movement == actions[5]:
+
                 player1.talk()
+
+                if player1.gameover == 1:
+                    print("")
+                    print("")
+                    print("YOU WON HAHAHA!! GOOD JOB")
+                    break
+                elif player1.gameover == 2:
+                    print("")
+                    print("")
+                    print("Fortunately you lived, but YOU LOST!!")
+                    break
+                else:
+                    pass
 
             # help
             elif user_movement == actions[6]: 
@@ -112,6 +145,7 @@ def main_game():
             
             # quit            
             elif user_movement == actions[7]: 
+                print("YOU LOSE!!!")
                 break
             
 

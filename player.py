@@ -11,6 +11,7 @@ class Player:
         self.current_loc = p_world.areas[0]
         self.stops = 0
         self.score = 0
+        self.gameover = 0
 
     def move(self, action):
         
@@ -58,11 +59,13 @@ class Player:
                 print("")
                 print("GRAHHAHA!!! You did meet him.")
                 self.score = 1000
+                self.gameover = 1
             else:
                 print("")
                 print("")
                 print("You did not meet him? Shame. \n*He takes a sword out and runs you back to Home!*")
-                return False
+                self.gameover = 2
+                
     
         elif self.p_world.npc[self.p_world.areas.index(self.current_loc)] == None:
             print("")
