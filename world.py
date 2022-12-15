@@ -11,8 +11,8 @@ frozen_lake1: str = "You walk out of the village towards the now frozen lake nea
 frozen_lake2: str = "A meadow borders the lake in the direction your walking. You can also hear a train blow its whistle in the distance."
 meadow1: str = "A lone tree stands in the middle of the meadow. You see some birds flying to and from the tree as you're walking by."
 meadow2: str = "You see the river ahead of you as you are walking. The birds are very loud to each other, and it seems like there are more hidden in the tree."
-river1: str = "The river still flows despite the frigid temperature. Its a very bright blue."
-river2: str = "You take your hand out of its glove and test the water. \nYou find that its cold.\nYou keep walking along the river. You also see an old campsite on the western side of the river."
+river1: str = "The river still flows despite the frigid temperature. Its a very bright blue. You also see an old campsite on the western side of the river."
+river2: str = "You take your hand out of its glove and test the water. \nYou find that its cold.\nYou continue."
 campsite1: str = "You decide to head towards it and forge the river by walking over some rocks."
 campsite2: str = "The campsite is fairly new, but the coals in the firepit are icy to the touch. \nSome snowed on leftover tents make up the rest of the campsite.\nYou see a swamp bordering the northern side of the campsite and an array of cliffs past it."
 swamp1: str = "You eventually find yourself in an ice-covered swamp. Trees sprout from small land masses throughout the swamp."
@@ -21,6 +21,11 @@ cliffs1: str = "You find yourself at the base of the cliffs. You look above you 
 cliffs2: str = "A small pathway can be seen clearly carved along the cliffside going north towards the top"
 rock1: str = "You make your way to the top of the cliffside and find yourself graced by the presence of a large rock. This is the end."
 rock2: str = "You take a look around you and decide to take a picture of your surroundings. \nhttps://cdn.discordapp.com/attachments/311944103804010496/1020799631766069331/unknown.png"
+
+pub_NPC: str = "Hello there! The snow is nice outside! I might go up towards the rock on the top of the cliff later today if my work_meeting gets called off early, hahaha! \nI heard my weirdo brothers already went over there."
+campsite_NPC: str = "Hello there! You need to go take a shower, BAHAHAHA! \nIf you meet my brother further along this path, say MAYBE to whatever he asks you!"
+rock_NPC: str = "Hello there! Did you meet the weird guy at the camp? \nAnswer Carefully...."
+
 
 class World:
     
@@ -53,6 +58,10 @@ class World:
             [self.areas[8], self.areas[9], self.areas[7], None, None],             # cliffs
             [self.areas[9], None, None, None, None]                                # rock
         ]
+
+        self.npc = [None, None, pub_NPC, None, None, None, campsite_NPC, None, None, rock_NPC]
+
+        self.answers = ["maybe"]
 
     def get_names(self):
         list_locales = []
